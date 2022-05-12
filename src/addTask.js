@@ -3,6 +3,7 @@ import { singleTask } from './createUI.js';
 import deleteTask from './deleteUI.js';
 import editTask from './editTask.js';
 import { tasks } from './tasks.js';
+import interactive from './interactive.js';
 
 function addTaskDetails() {
   const textInput = document.getElementById('input');
@@ -13,6 +14,7 @@ function addTaskDetails() {
     singleTask(task);
     deleteTask();
     editTask();
+    interactive()
     const textInput = document.getElementById('input');
     textInput.value = '';
     localStorage.setItem('tasks', JSON.stringify(tasks));

@@ -117,3 +117,7 @@ footer p {
   width: 40%;
   margin: 0 auto;
 }
+
+.line-through {
+  text-decoration: line-through;
+}
