@@ -107,15 +107,16 @@
 
 .footer {
   background-color: #f6f6f6;
-  padding: 12px;
-  width: 94%;
+
+  /* padding: 12px; */
 }
 
-footer p {
-  font-size: 18px;
+footer button {
+  border: none;
+  padding: 24px;
   cursor: pointer;
-  width: 40%;
-  margin: 0 auto;
+  width: 100%;
+  font-size: 16px;
 }
 
 .line-through {

@@ -8,7 +8,7 @@ export function createUI(text) {
 
   const input = document.createElement('input');
   input.setAttribute('type', 'checkbox');
-  input.classList.add('check')
+  input.classList.add('check');
 
   const textPara = document.createElement('p');
   textPara.setAttribute('contenteditable', 'true');

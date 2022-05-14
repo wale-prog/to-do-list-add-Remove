@@ -18,15 +18,11 @@ export default function deleteTask() {
     item.addEventListener('click', () => {
       const taskRemove = item.parentNode;
       const taskRemoveContent = taskRemove.firstChild.nextSibling.textContent;
-      const removedItem = tasks.filter((item) => item.description === taskRemoveContent);
-      for (let i = 0; i < tasks.length; i += 1) {
-        if (tasks[i].index > removedItem[0].index) {
-          const newIndex = tasks[i].index - 1;
-          tasks[i].index = newIndex;
-        }
-      }
       tasks = tasks.filter((task) => task.description !== taskRemoveContent);
       taskSection.removeChild(taskRemove);
+      for (let i = 0; i < tasks.length; i += 1) {
+        tasks[i].index = i + 1;
+      }
       localStorage.setItem('tasks', JSON.stringify(tasks));
     });
   });

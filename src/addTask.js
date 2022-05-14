@@ -12,9 +12,10 @@ function addTaskDetails() {
     const task = new Add(taskDescription, false, tasks.length + 1);
     tasks.push(task);
     singleTask(task);
+    interactive();
     deleteTask();
     editTask();
-    interactive()
+
     const textInput = document.getElementById('input');
     textInput.value = '';
     localStorage.setItem('tasks', JSON.stringify(tasks));
