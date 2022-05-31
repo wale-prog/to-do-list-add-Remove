@@ -12,8 +12,7 @@ function addTaskDetails() {
     const task = new Add(taskDescription, false, tasks.length + 1);
     tasks.push(task);
     singleTask(task);
-    interactive();
-    deleteTask();
+    interactive();   
     editTask();
 
     const textInput = document.getElementById('input');
@@ -21,16 +20,16 @@ function addTaskDetails() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 }
+
 function validateKeydown(event) {
   if (event.key === 'Enter') {
     addTaskDetails();
+    deleteTask();
   }
 }
 export default function addTasks() {
   const textInput = document.getElementById('input');
-  textInput.addEventListener('keydown', (event) => { validateKeydown(event); });
+  textInput.addEventListener('keydown', (event) => validateKeydown(event));
   const returnBtn = document.querySelector('.return');
-  returnBtn.addEventListener('click', () => {
-    addTaskDetails();
-  });
+  returnBtn.addEventListener('click', () =>addTaskDetails());
 }

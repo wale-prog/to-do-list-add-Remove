@@ -15,15 +15,16 @@ export default function deleteTask() {
   }
 
   trash.forEach((item) => {
-    item.addEventListener('click', () => {
-      const taskRemove = item.parentNode;
+    item.addEventListener('click', (event) => {
+      const taskRemove = event.target.parentElement;
       const taskRemoveContent = taskRemove.firstChild.nextSibling.textContent;
-      tasks = tasks.filter((task) => task.description !== taskRemoveContent);
       taskSection.removeChild(taskRemove);
+      tasks = tasks.filter((task) => task.description !== taskRemoveContent);      
       for (let i = 0; i < tasks.length; i += 1) {
         tasks[i].index = i + 1;
       }
-      localStorage.setItem('tasks', JSON.stringify(tasks));
+      localStorage.setItem('tasks', JSON.stringify(tasks));      
     });
   });
 }
+

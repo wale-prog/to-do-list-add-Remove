@@ -10,7 +10,8 @@ export default function interactive() {
       if (event.target.checked) {
         paraNode.classList.add('line-through');
         tasks[completedArray[0].index - 1].completed = true;
-      } else {
+      } 
+      else {
         paraNode.classList.remove('line-through');
         tasks[completedArray[0].index - 1].completed = false;
       }
@@ -22,7 +23,8 @@ export default function interactive() {
       if (input.checked === true) {
         const taskRemove = input.parentElement;
         taskSection.removeChild(taskRemove);
-      } else {
+      }
+       else {
         return false;
       }
       tasks = tasks.filter((completed) => completed.completed !== true);

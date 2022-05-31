@@ -1,5 +1,6 @@
 import { tasks } from './tasks.js';
 import deleteTask from './deleteUI.js';
+import editTask from './editTask.js';
 
 export function createUI(text) {
   const taskSection = document.querySelector('.tasks-section');
@@ -27,11 +28,11 @@ export function createUI(text) {
   taskSection.appendChild(taskUI);
   return taskSection;
 }
-
+const trash = document.querySelectorAll('.trash');
 export function singleTask() {
   tasks.forEach((task) => {
     if (task.index >= tasks.length) {
-      deleteTask();
+      deleteTask(trash);
       createUI(task);
     }
   });
@@ -39,6 +40,8 @@ export function singleTask() {
 
 export function singleTaskDefault() {
   tasks.forEach((task) => {
+    editTask()
     createUI(task);
+    
   });
 }

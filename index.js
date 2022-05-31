@@ -5,8 +5,8 @@ import editTask from './src/editTask.js';
 import addTasks from './src/addTask.js';
 import interactive from './src/interactive.js';
 
-singleTaskDefault();
 addTasks();
+singleTaskDefault();
 interactive();
 deleteTask();
 editTask();
